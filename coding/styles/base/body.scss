@@ -1,0 +1,27 @@
+/* ==========================================================================
+    BODY
+   ========================================================================== */
+html {
+	overflow-x: hidden;
+}
+
+body {
+	@include primaryFont;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	min-height: 100svh;
+	color: var(--clrTxt);
+	line-height: 1.5;
+	font-size: rem(16px);
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+body.admin-bar {
+	margin-top: rem(46px);
+
+	@include media-tablet {
+		margin-top: rem(32px);
+	}
+}

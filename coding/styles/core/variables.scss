@@ -1,0 +1,30 @@
+// ==========================================================================
+//   VARIABLES
+// ==========================================================================
+$uniqeid : unique_id();
+$ver : unique_id();
+
+:root {
+    --sectionWidth: #{rem(1216px)};
+
+    --clrPrimary: #FFB300;
+    --clrSecondary: #0e0e0e;
+
+    --clrWhite: #fff;
+    --clrGrey: #ccc;
+
+    --clrTxt: #000;
+    --clrLinks: #000;
+    --clrLinksActive: #FFB300;
+
+    --codeBg: #CCC9CF;
+    --bulletBg: #CCC9CF;
+
+    --tableBorder: #E8E7E9;
+    --tableHeadBg: #E8E7E9;
+    --tableHeadBorder: #9D98A2;
+
+    --dividerBg: #E8E7E9;
+    --quoteBorder: #9D98A2;
+    --blockquoteBg: #E8E7E9;
+}

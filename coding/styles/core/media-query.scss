@@ -1,0 +1,30 @@
+// ==========================================================================
+//   MEDIA QUERY
+// ==========================================================================
+$tablet-width: 48em;    // 768px
+$desktop-width: 64em;   // 1024px
+$pixel: 0.0625em;       // 1px
+
+@mixin media-phone {
+    @media (max-width: #{$tablet-width - $pixel}) {
+        @content;
+    }
+}
+
+@mixin media-tablet-range {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - $pixel}) {
+        @content;
+    }
+}
+
+@mixin media-tablet {
+    @media (min-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin media-desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}

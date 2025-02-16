@@ -1,0 +1,83 @@
+﻿// ==========================================================================
+//   BASE HTML
+// ==========================================================================
+body {width:100%!important; margin:0!important; padding:0!important; line-height:1.4; word-spacing:1.1pt; letter-spacing:0.2pt; font-family:Arial, Arial, Helvetica, sans-serif; color:#000; background:none; font-size:10pt;}
+p {margin-top:0;}
+
+h1,h2,h3,h4,h5,h6 {font-family:Helvetica, Arial, sans-serif;}
+h1{font-size:17pt; line-height:18pt; margin:10pt 0 7pt 0;}
+h2{font-size:15pt; line-height:16pt; margin:5pt 0 7pt 0;}
+h3{font-size:13pt; line-height:14pt; margin:5pt 0 7pt 0;}
+h4,h5,h6{font-size:11pt; line-height:12pt; margin:5pt 0;}
+
+code {font:10pt Courier, monospace;}
+blockquote {margin:0.4em 0; padding:0.3em 0.5em; font-size:10pt; border:1px solid #000; width:95%; display:block;}
+blockquote p {margin: 0; padding: 0.3em 0;}
+hr {box-sizing:border-box; float:left; width:100%; height:1px; margin-bottom: 10pt; background-color:#ccc; font-size:1px; line-height:1px;}
+
+a:link, a:visited {background:transparent; text-decoration:underline; color:#333;}
+a[href^="tel"], a[href^="sms"] {text-decoration: none;}
+
+table {margin:1px 0; border-collapse: collapse; border-spacing: 0; text-align:left; }
+th {border-bottom:1px solid #333; font-weight:bold;}
+td {border-bottom:1px solid #333; }
+th,td {padding:4pt 10pt 4pt 0;}
+tfoot {font-style:italic;}
+caption {background:#fff; margin-bottom:2em; text-align:left;}
+thead {display:table-header-group;}
+img {border: 0;}
+
+// ==========================================================================
+//   IMG
+// ==========================================================================
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img.left {
+    float: left;
+    margin: 3pt 15pt 5pt 0;
+}
+
+img.right {
+    float: right;
+    margin: 3pt 0 5pt 15pt;
+}
+
+hr {
+    height: 1px;
+    margin: 10pt 0 20pt 0;
+    background: #ccc;
+    border: none;
+}
+
+.swiper-slide {
+    transform: none!important;
+}
+
+.swiper-wrapper {
+    height: auto!important;
+}
+
+// ==========================================================================
+//   ADDITIONAL
+// ==========================================================================
+.header {
+    margin-bottom: 20pt;
+    padding-bottom: 10pt;
+    border-bottom: 1px solid #ccc;
+}
+
+.footer {
+    margin-top: 20pt;
+    border-top: 1px solid #ccc;
+    font-size: 90%;
+    text-align: center;
+}
+
+// ==========================================================================
+//   HIDE
+// ==========================================================================
+.hamburger
+{display:none;}
