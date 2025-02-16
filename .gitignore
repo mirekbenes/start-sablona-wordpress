@@ -2,7 +2,7 @@
 /.idea/
 
 # compiled output
-/dist/
+/html/
 
 # dependencies
 /coding/node_modules/
