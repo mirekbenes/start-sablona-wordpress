@@ -28,8 +28,7 @@ function getCurrentDocumentLanguage() {
 
 function getTranslation(key) {
   const lang = getCurrentDocumentLanguage().toLowerCase();
-
-  console.log(lang);
+  
   return translationsGlightbox[lang] ? translationsGlightbox[lang][key] : translationsGlightbox['cs-cz'][key];
 }
 
