@@ -1,3 +1,39 @@
+function hitEscapeKey() {
+  const escapeKey = document.createEvent("Events");
+  escapeKey.initEvent("keydown", true, true);
+  escapeKey.keyCode = 27;
+  escapeKey.which = 27;
+  document.dispatchEvent(escapeKey);
+}
+
+// Objekt pro překlady
+const translationsGlightbox = {
+  'en-us': {
+    close: "Close",
+    previous: "Previous",
+    next: "Next",
+    modalName: "Photo gallery opened",
+  },
+  'cs-cz': {
+    close: "Zavřít",
+    previous: "Předchozí",
+    next: "Další",
+    modalName: "Otevřena galerie fotografií",
+  },
+};
+
+function getCurrentDocumentLanguage() {
+  return document.documentElement.lang || 'cs-cz';
+}
+
+function getTranslation(key) {
+  const lang = getCurrentDocumentLanguage().toLowerCase();
+
+  console.log(lang);
+  return translationsGlightbox[lang] ? translationsGlightbox[lang][key] : translationsGlightbox['cs-cz'][key];
+}
+
+// Glightbox
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -578,15 +614,15 @@
         if (key == 9) {
           var focusedButton = document.querySelector('.gbtn.focused');
 
-          if (!focusedButton) {
+          /*if (!focusedButton) {
             var activeElement = document.activeElement && document.activeElement.nodeName ? document.activeElement.nodeName.toLocaleLowerCase() : false;
 
             if (activeElement == 'input' || activeElement == 'textarea' || activeElement == 'button') {
               return;
             }
-          }
+          }*/
 
-          event.preventDefault();
+          //event.preventDefault();
           var btns = document.querySelectorAll('.gbtn[data-taborder]');
 
           if (!btns || btns.length <= 0) {
@@ -1749,18 +1785,14 @@
       img.srcset = data.srcset;
     }
 
-    img.alt = '';
-
-    if (!isNil(data.alt) && data.alt !== '') {
-      img.alt = data.alt;
-    }
+    img.alt = data.description;
 
     if (data.title !== '') {
       img.setAttribute('aria-labelledby', titleID);
     }
 
     if (data.description !== '') {
-      img.setAttribute('aria-describedby', textID);
+      //img.setAttribute('aria-describedby', textID);
     }
 
     if (data.hasOwnProperty('_hasCustomWidth') && data._hasCustomWidth) {
@@ -2418,7 +2450,7 @@
     onOpen: null,
     onClose: null,
     loop: false,
-    zoomable: true,
+    zoomable: false,
     draggable: true,
     dragAutoSnap: false,
     dragToleranceX: 40,
@@ -2486,8 +2518,18 @@
       prev: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.175 477.175" xml:space="preserve"><g><path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"/></g></svg>'
     }
   };
-  defaults.slideHTML = "<div class=\"gslide\">\n    <div class=\"gslide-inner-content\">\n        <div class=\"ginner-container\">\n            <div class=\"gslide-media\">\n            </div>\n            <div class=\"gslide-description\">\n                <div class=\"gdesc-inner\">\n                    <h4 class=\"gslide-title\"></h4>\n                    <div class=\"gslide-desc\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";
-  defaults.lightboxHTML = "<div id=\"glightbox-body\" class=\"glightbox-container\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"false\">\n    <div class=\"gloader visible\"></div>\n    <div class=\"goverlay\"></div>\n    <div class=\"gcontainer\">\n    <div id=\"glightbox-slider\" class=\"gslider\"></div>\n    <button class=\"gclose gbtn\" aria-label=\"Close\" data-taborder=\"3\">{closeSVG}</button>\n    <button class=\"gprev gbtn\" aria-label=\"Previous\" data-taborder=\"2\">{prevSVG}</button>\n    <button class=\"gnext gbtn\" aria-label=\"Next\" data-taborder=\"1\">{nextSVG}</button>\n</div>\n</div>";
+  defaults.slideHTML = "<div class=\"gslide\">\n    <div class=\"gslide-inner-content\">\n        <div class=\"ginner-container\">\n            <div class=\"gslide-media\">\n            </div>\n            <div class=\"gslide-description\">\n                <div class=\"gdesc-inner\">\n                    <h4 class=\"gslide-title\"></h4>\n                    <div class=\"gslide-desc\" aria-hidden=\"true\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";
+  defaults.lightboxHTML = `
+<div id="glightbox-body" class="glightbox-container" tabindex="-1" role="dialog" aria-modal="true" aria-label="${getTranslation('modalName')}" aria-hidden="false">
+    <div class="gloader visible"></div>
+    <div class="goverlay"></div>
+    <div class="gcontainer">
+        <div id="glightbox-slider" class="gslider"></div>
+        <button class="gclose gbtn" aria-label="${getTranslation('close')}" data-taborder="3">{closeSVG}</button>
+        <button class="gprev gbtn" aria-label="${getTranslation('previous')}" data-taborder="2">{prevSVG}</button>
+        <button class="gnext gbtn" aria-label="${getTranslation('next')}" data-taborder="1">{nextSVG}</button>
+    </div>
+</div>`;
 
   var GlightboxInit = function () {
     function GlightboxInit() {
@@ -3259,6 +3301,7 @@
           if (el.parentNode == document.body && el.nodeName.charAt(0) !== '#' && el.hasAttribute && !el.hasAttribute('aria-hidden')) {
             bodyChildElms.push(el);
             el.setAttribute('aria-hidden', 'true');
+            el.setAttribute("inert", "");
           }
         });
 
@@ -3469,20 +3512,33 @@
       value: function updateNavigationClasses() {
         var loop = this.loop();
 
+        // Enable both buttons by default
         removeClass(this.nextButton, 'disabled');
+        this.nextButton.setAttribute('aria-hidden', 'false');
 
         removeClass(this.prevButton, 'disabled');
+        this.prevButton.setAttribute('aria-hidden', 'false');
 
+        // Single element case: disable both buttons
         if (this.index == 0 && this.elements.length - 1 == 0) {
           addClass(this.prevButton, 'disabled');
+          this.prevButton.setAttribute('aria-hidden', 'true');
 
           addClass(this.nextButton, 'disabled');
-        } else if (this.index === 0 && !loop) {
+          this.nextButton.setAttribute('aria-hidden', 'true');
+        }
+        // At the first slide, disable previous button if not looping
+        else if (this.index === 0 && !loop) {
           addClass(this.prevButton, 'disabled');
-        } else if (this.index === this.elements.length - 1 && !loop) {
+          this.prevButton.setAttribute('aria-hidden', 'true');
+        }
+        // At the last slide, disable next button if not looping
+        else if (this.index === this.elements.length - 1 && !loop) {
           addClass(this.nextButton, 'disabled');
+          this.nextButton.setAttribute('aria-hidden', 'true');
         }
       }
+
     }, {
       key: "loop",
       value: function loop() {
@@ -3523,6 +3579,7 @@
         if (this.bodyHiddenChildElms.length) {
           each(this.bodyHiddenChildElms, function (el) {
             el.removeAttribute('aria-hidden');
+            el.removeAttribute('inert');
           });
         }
 
