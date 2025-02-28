@@ -64,6 +64,7 @@ function styles() {
         .pipe(sass().on('error', sass.logError))
         .pipe(sass({ outputStyle: "expanded" }))
         .pipe(postcss([ autoprefixer("last 4 versions") ]))
+        .pipe(sourcemaps.write("source-maps"))
         .pipe(gulp.dest("../assets/css/"))
         .pipe(browsersync.stream());
 }
@@ -76,8 +77,7 @@ function stylesMaps() {
         .pipe(sass().on('error', sass.logError))
         .pipe(sass({ outputStyle: "expanded" }))
         .pipe(postcss([ autoprefixer("last 4 versions") , cssnano() ]))
-        .pipe(rename({ suffix: ".maps" }))
-        .pipe(sourcemaps.write("source-maps"))
+        .pipe(rename({ suffix: ".min" }))
         .pipe(gulp.dest("../assets/css/"))
         .pipe(browsersync.stream());
 }
