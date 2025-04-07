@@ -8,7 +8,7 @@ function hitEscapeKey() {
 
 // Objekt pro překlady
 const translationsGlightbox = {
-  'en-us': {
+  'en-gb': {
     close: "Close",
     previous: "Previous",
     next: "Next",
@@ -28,7 +28,7 @@ function getCurrentDocumentLanguage() {
 
 function getTranslation(key) {
   const lang = getCurrentDocumentLanguage().toLowerCase();
-  
+
   return translationsGlightbox[lang] ? translationsGlightbox[lang][key] : translationsGlightbox['cs-cz'][key];
 }
 
@@ -3299,7 +3299,7 @@ function getTranslation(key) {
         each(children, function (el) {
           if (el.parentNode == document.body && el.nodeName.charAt(0) !== '#' && el.hasAttribute && !el.hasAttribute('aria-hidden')) {
             bodyChildElms.push(el);
-            el.setAttribute('aria-hidden', 'true');
+            //el.setAttribute('aria-hidden', 'true');
             el.setAttribute("inert", "");
           }
         });
@@ -3513,28 +3513,28 @@ function getTranslation(key) {
 
         // Enable both buttons by default
         removeClass(this.nextButton, 'disabled');
-        this.nextButton.setAttribute('aria-hidden', 'false');
+        this.nextButton.removeAttribute('inert', '');
 
         removeClass(this.prevButton, 'disabled');
-        this.prevButton.setAttribute('aria-hidden', 'false');
+        this.prevButton.removeAttribute('inert', '');
 
         // Single element case: disable both buttons
         if (this.index == 0 && this.elements.length - 1 == 0) {
           addClass(this.prevButton, 'disabled');
-          this.prevButton.setAttribute('aria-hidden', 'true');
+          this.prevButton.setAttribute('inert', '');
 
           addClass(this.nextButton, 'disabled');
-          this.nextButton.setAttribute('aria-hidden', 'true');
+          this.nextButton.removeAttribute('inert', '');
         }
         // At the first slide, disable previous button if not looping
         else if (this.index === 0 && !loop) {
           addClass(this.prevButton, 'disabled');
-          this.prevButton.setAttribute('aria-hidden', 'true');
+          this.prevButton.setAttribute('inert', '');
         }
         // At the last slide, disable next button if not looping
         else if (this.index === this.elements.length - 1 && !loop) {
           addClass(this.nextButton, 'disabled');
-          this.nextButton.setAttribute('aria-hidden', 'true');
+          this.nextButton.setAttribute('inert', '');
         }
       }
 
@@ -3577,7 +3577,7 @@ function getTranslation(key) {
 
         if (this.bodyHiddenChildElms.length) {
           each(this.bodyHiddenChildElms, function (el) {
-            el.removeAttribute('aria-hidden');
+            //el.removeAttribute('aria-hidden');
             el.removeAttribute('inert');
           });
         }

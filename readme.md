@@ -6,7 +6,7 @@ Gulp ver 4.
 
 ------
 
-Složky `html`, `assets/css` a `assets/je` jsou generovány při buildu nebo watchi.
+Složky `html`, `assets/css` a `assets/js` jsou generovány při buildu nebo watchi.
 
 ------
 
