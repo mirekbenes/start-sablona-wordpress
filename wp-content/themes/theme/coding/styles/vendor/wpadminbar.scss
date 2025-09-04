@@ -1,0 +1,20 @@
+/* ==========================================================================
+    WPADMINBAR
+   ========================================================================== */
+body.admin-bar {
+	&:before {
+		top: rem(32px);
+
+		@media (max-width: 782px) {
+			top: rem(46px);
+		}
+	}
+
+	.header {
+		margin-top: rem(32px);
+
+		@media (max-width: 782px) {
+			margin-top: rem(46px);
+		}
+	}
+}

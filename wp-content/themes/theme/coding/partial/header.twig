@@ -11,7 +11,7 @@
 
         <div class="header__logo">
             <div class="sitelogo">
-                <a href="/">
+                <a href="../html/">
                     <img src="../assets/images/logo.svg" alt="BIG TIME" width="120" height="19">
                 </a>
             </div>
@@ -20,17 +20,17 @@
         <div class="header__nav">
             <nav class="nav" aria-label="Primary">
                 <ul class="reset">
-                    <li{{ navActive == 'navAbout' ? ' class="is-active"' : '' }}>
-                        <a href="/about/">About</a>
+                    <li{{ navActive == 'navAbout' ? ' class="current-menu-item"' : '' }}>
+                        <a href="01-about.php">About</a>
                     </li>
-                    <li{{ navActive == 'navWork' ? ' class="is-active"' : '' }}>
-                        <a href="/work/">Work</a>
+                    <li{{ navActive == 'navWork' ? ' class="current-menu-item"' : '' }}>
+                        <a href="02-work.php">Work</a>
                     </li>
-                    <li{{ navActive == 'navCareers' ? ' class="is-active"' : '' }}>
-                        <a href="/careers/">Careers</a>
+                    <li{{ navActive == 'navCareers' ? ' class="current-menu-item"' : '' }}>
+                        <a href="03-careers.php">Careers</a>
                     </li>
-                    <li{{ navActive == 'navContact' ? ' class="is-active"' : '' }}>
-                        <a href="/contact/">Contact</a>
+                    <li{{ navActive == 'navContact' ? ' class="current-menu-item"' : '' }}>
+                        <a href="04-contact.php">Contact</a>
                     </li>
                 </ul>
             </nav><!-- /nav -->
@@ -38,7 +38,24 @@
 
         <div class="header__tools">
             <div class="langswitch">
-                <a href="/cs/">CS</a>
+                <!-- vypni styly -->
+                <div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-dropdown js-wpml-ls-legacy-dropdown">
+                    <ul>
+                        <li tabindex="0" class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-sl wpml-ls-current-language wpml-ls-last-item wpml-ls-item-legacy-dropdown">
+                            <a href="#" class="js-wpml-ls-item-toggle wpml-ls-item-toggle">
+                                <span class="wpml-ls-native">en</span>
+                            </a>
+
+                            <ul class="wpml-ls-sub-menu">
+                                <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-first-item">
+                                    <a href="#" class="wpml-ls-link">
+                                        <span class="wpml-ls-native" lang="cs">cs</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div><!-- /header__tools -->
     </div><!-- /header__section -->

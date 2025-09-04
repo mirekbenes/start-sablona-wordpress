@@ -104,16 +104,6 @@ function stylesPrint() {
         .pipe(browsersync.stream());
 }
 
-function stylesPrint() {
-    return gulp
-        .src("styles-print/print.scss")
-        .pipe(plumber())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(sass({ outputStyle: "expanded" }))
-        .pipe(gulp.dest("../assets/css/"))
-        .pipe(browsersync.stream());
-}
-
 /*////////////////////////////////////////
     Scripts
 /////////////////////////////////////////*/

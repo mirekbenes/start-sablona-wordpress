@@ -12,6 +12,7 @@
 @import 'vendor/normalize';
 @import 'vendor/glightbox';
 @import 'vendor/swiper';
+@import 'vendor/wpadminbar';
 
 // Base
 @import 'base/body';
@@ -19,7 +20,7 @@
 
 // Layout
 @import 'layout/container';
-@import 'layout/section';
+@import 'layout/header';
 @import 'layout/footer';
 
 // UI Components
