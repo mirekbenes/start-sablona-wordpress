@@ -1,0 +1,241 @@
+{% extends "../layout/default.twig" %}
+
+{% set lang = 'en-GB' %}
+{% set ogLocale = 'en_GB' %}
+{% set robots = 'noindex, nofollow' %}
+{% set title = 'BIG TIME' %}
+{% set description = 'BIG TIME' %}
+{% set ogImage = '' %}
+{% set bodyClass = '' %}
+{% set navActive = 'navAbout' %}
+
+{% block content %}
+	<div class="container">
+        {% include "../partial/header.twig" %}
+
+		<main class="main">
+			<h1>Rozcestník HTML šablon</h1>
+
+			<ul>
+				<li><a href="./index/">Index</a></li>
+			</ul>
+
+			<hr>
+
+			<h2>Vývojové prostředí kodéra</h2>
+			<p>Návod na instalaci stejného vývojového prostředí je možný prohlédnout <a href="https://github.com/mirekbenes/vyvojove-prostredi-gulp4">zde</a>.</p>
+
+			<hr>
+
+			<h2>Informace k HTML/CSS/JS</h2>
+			<p>HTML a CSS je tvořeno pomocí metodiky <a href="http://getbem.com/">BEM</a>.</p>
+			<p>Na elementu <code>&lt;body&gt;</code> je pro homepage CLASS <code>homepage</code> pro ostatní strany dle potřeby.</p>
+
+			<p>Na homepage je logo v elementu <code>&lt;h1 class="sitelogo"&gt;logo&lt;/h1&gt;</code> na ostatních stranách již v odstavci <code>&lt;p class="sitelogo"&gt;logo&lt;/p&gt;</code>.</p>
+
+			<hr>
+
+			<h3>Písmo</h3>
+			<p>Použitá písma: Bebas Neue (Adobe Fonts) Roboto (Google fonts <code>dist/js/fonts.js</code>) (Google fonts - písmo je importováno styly <code>@import</code>) (Inicializace přes Web Font Loader v <code>source/scripts/custom/fonts.js</code>).</p>
+			<ul>
+				<li>Bebas Neue: Regular</li>
+				<li>Roboto: Normal, Bold</li>
+			</ul>
+
+			<hr>
+
+			<h2>HTML</h2>
+			<p>je vygenerované z twigu zdrojové soubory jsou ve složce <code>source/twig</code>.</p>
+
+			<hr>
+
+			<h2>CSS</h2>
+			<p>je vygenerované z SCSS, zdrojové soubory pro SCSS jsou ve složce <code>source/styles/*.scss</code>.<br>Z SCSS jsou vygenerována 2 CSS ( <code>dist/css/style.min.css</code>a verze <code>dist/css/style.maps.css</code>, která má source maps).</p>
+
+			<hr>
+
+			<h2>Obrázky</h2>
+			<p>Obrázky pro CSS jsou datově komprimované.</p>
+
+			<hr>
+
+			<h2>JavaScripty</h2>
+			<p>Všechny prvky, které jsou propojeny s JavaScriptem mají class popřípadě ID <code>js-nazev-propojeni</code>.</p>
+			<p>Scripty jsou sloučené do jednoho souboru <code>dist/js/compiled.js</code> a komprimované podoby <code>dist/js/compiled.min.js</code>. Nezkomprimovaná podoba všech scriptů  je ve složce <code>source/js</code>.</p>
+			<p>Spouštení jmenných prostorů a inicializace pluginů je v <code>source/js/init/site.js</code></p>
+
+			<hr>
+
+			<h3>JS pluginy a jmenné prostory</h3>
+			<p>
+				<strong>Lightbox</strong> <code>source/js/_vendor-plugin/glightbox.js</code><br>
+				<small class="lic">Licence MIT</small><br>
+				Použit plugin GLightbox. Dokumentace dostupná <a href="https://github.com/biati-digital/glightbox">zde</a>.<br>
+				Popis obrázků pro lightbox se vytváří přes HTML5 datové atributy.<br>
+				Class "js-lightbox" je primární inicializace. Asociace fotografií do galerie se provede automaticky.<br>
+				<code>&lt;a href="#" class="js-lightbox" data-description="Popis obrázku"&gt;</code>
+			</p>
+
+			<hr>
+
+			<p>
+				<strong>Jednoduché komponenty</strong><br>
+				<small class="lic">Licence WTFPL</small><br>
+				Primární navigace <code>source/js/custom/jquery.nav.js</code>
+			</p>
+
+			<hr>
+
+			<h2>Nadpis H2</h2>
+			<a href="https://fastly.picsum.photos/id/866/1200/800.jpg?hmac=cMZ0zQRwnCFQskIqM7bmp90xVm9-k6lHUAFEJZp3mw4" class="js-lightbox" data-description="Popis obrázku"><img src="https://picsum.photos/seed/picsum/300/200" alt="Popisek" width="200" class="left"></a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Donec vel massa leo</strong>. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo. Duis et facilisis nisl. Cras vehicula, lectus id dictum viverra, mauris lorem rhoncus elit, non consequat <a href="#">odkaz</a> ut enim. Integer ultrices placerat orci nec rhoncus. Cras viverra, dolor quis ullamcorper sollicitudin, urna ipsum cursus ipsum, in porta diam ligula et sem. Maecenas nibh arcu, condimentum eu hendrerit vitae, vehicula id arcu. Pellentesque quis feugiat nisi.</p>
+
+			<hr>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Donec vel massa leo</strong>. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo. Duis et facilisis nisl. Cras vehicula, lectus id dictum viverra, mauris lorem rhoncus elit, non consequat <a href="#">odkaz</a> ut enim. Integer ultrices placerat orci nec rhoncus. Cras viverra, dolor quis ullamcorper sollicitudin, urna ipsum cursus ipsum, in porta diam ligula et sem. Maecenas nibh arcu, condimentum eu hendrerit vitae, vehicula id arcu. Pellentesque quis feugiat nisi.</p>
+
+			<h3>Nadpis H3</h3>
+			<a href="https://fastly.picsum.photos/id/866/1200/800.jpg?hmac=cMZ0zQRwnCFQskIqM7bmp90xVm9-k6lHUAFEJZp3mw4" class="js-lightbox"><img src="https://picsum.photos/seed/picsum/300/200" alt="Popisek" width="200" class="right"></a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo. Duis et facilisis nisl. Cras vehicula, lectus id dictum viverra, mauris lorem rhoncus elit, non consequat lectus augue ut enim. Integer ultrices placerat orci nec rhoncus. Cras viverra, dolor quis ullamcorper sollicitudin, urna ipsum cursus ipsum, in porta diam ligula et sem. Maecenas nibh arcu, condimentum eu hendrerit vitae, vehicula id arcu. Pellentesque quis feugiat nisi.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo. Duis et facilisis nisl. Cras vehicula, lectus id dictum viverra, mauris lorem rhoncus elit, non consequat lectus augue ut enim. Integer ultrices placerat orci nec rhoncus. Cras viverra, dolor quis ullamcorper sollicitudin, urna ipsum cursus ipsum, in porta diam ligula et sem. Maecenas nibh arcu, condimentum eu hendrerit vitae, vehicula id arcu. Pellentesque quis feugiat nisi.</p>
+
+			<h4>Nadpis H4</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo. Duis et facilisis nisl. Cras vehicula, lectus id dictum viverra, mauris lorem rhoncus elit, non consequat lectus augue ut enim. Integer ultrices placerat orci nec rhoncus. Cras viverra, dolor quis ullamcorper sollicitudin, urna ipsum cursus ipsum, in porta diam ligula et sem. Maecenas nibh arcu, condimentum eu hendrerit vitae, vehicula id arcu. Pellentesque quis feugiat nisi.</p>
+
+			<h5>Nadpis H5</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo. Duis et facilisis nisl. Cras vehicula, lectus id dictum viverra, mauris lorem rhoncus elit, non consequat lectus augue ut enim. Integer ultrices placerat orci nec rhoncus. Cras viverra, dolor quis ullamcorper sollicitudin, urna ipsum cursus ipsum, in porta diam ligula et sem. Maecenas nibh arcu, condimentum eu hendrerit vitae, vehicula id arcu. Pellentesque quis feugiat nisi.</p>
+
+			<h6>Nadpis H6</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo. Duis et facilisis nisl. Cras vehicula, lectus id dictum viverra, mauris lorem rhoncus elit, non consequat lectus augue ut enim. Integer ultrices placerat orci nec rhoncus. Cras viverra, dolor quis ullamcorper sollicitudin, urna ipsum cursus ipsum, in porta diam ligula et sem. Maecenas nibh arcu, condimentum eu hendrerit vitae, vehicula id arcu. Pellentesque quis feugiat nisi.</p>
+
+			<h2>Seznamy</h2>
+			<ul>
+				<li>lorem <a href="#">ipsum dolor</a></li>
+				<li>habitant morbi tristique senectus habitant morbi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo.</li>
+				<li>enim est mollis erat, sed fringilla leo
+					<ul>
+						<li>habitant morbi tristique senectus habitant morbi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo.</li>
+						<li>enim rhoncus eu cursus diam </li>
+					</ul>
+				</li>
+				<li>cursus condimentum tortor, eget egestas </li>
+			</ul>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo.</p>
+
+			<ol>
+				<li>lorem <a href="#">ipsum dolor</a></li>
+				<li>habitant morbi tristique senectus habitant morbi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo.</li>
+				<li>enim est mollis erat, sed fringilla leo
+					<ol>
+						<li>habitant morbi tristique senectus habitant morbi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo.</li>
+						<li>enim rhoncus eu cursus diam </li>
+					</ol>
+				</li>
+				<li>cursus condimentum tortor, eget egestas </li>
+			</ol>
+
+			<ol>
+				<li>lorem <a href="#">ipsum dolor</a></li>
+				<li>habitant morbi tristique senectus habitant morbi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo.</li>
+				<li>enim est mollis erat, sed fringilla leo
+					<ul>
+						<li>habitant morbi tristique senectus habitant morbi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo.</li>
+						<li>enim rhoncus eu cursus diam </li>
+					</ul>
+				</li>
+				<li>cursus condimentum tortor, eget egestas </li>
+			</ol>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo.</p>
+
+			<dl>
+				<dt>Lorem</dt>
+				<dd>Quisque vitae lacinia nisi. Cras eu arcu et dui tincidunt dictum vitae sit amet erat. Pellentesque habitant morbi tristique senectus et netus et malesuada</dd>
+				<dt>Lorem</dt>
+				<dd>Quisque vitae lacinia nisi. Cras eu arcu et dui tincidunt dictum vitae sit amet erat. Pellentesque habitant morbi tristique senectus et netus et malesuada</dd>
+			</dl>
+			<dl>
+				<dt>Lorem</dt>
+				<dd>Quisque vitae lacinia nisi. Cras eu arcu et dui tincidunt dictum vitae sit amet erat. Pellentesque habitant morbi tristique senectus et netus et malesuada</dd>
+			</dl>
+
+			<h2>Tabulka</h2>
+			<table>
+				<tbody>
+				<tr>
+					<th>praesent lorem</th>
+					<th><a href="#">viverra nulla</a></th>
+					<th>pulvinar ligula</th>
+				</tr>
+				<tr>
+					<td><a href="#">eget eu diam</a></td>
+					<td>quis varius</td>
+					<td>interdum nibh</td>
+				</tr>
+				<tr>
+					<td>posuere cubilia</td>
+					<td>habitant morbi</td>
+					<td>id blandit</td>
+				</tr>
+				<tr>
+					<td>eget congue</td>
+					<td>ornare non felis</td>
+					<td>amet augue</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo.</p>
+
+			<table class="width-100 no-border">
+				<thead>
+				<tr>
+					<td>praesent lorem</td>
+					<td><a href="#">viverra nulla</a></td>
+					<td>pulvinar ligula</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td><a href="#">eget eu diam</a></td>
+					<td>quis varius</td>
+					<td>interdum nibh</td>
+				</tr>
+				<tr>
+					<td>posuere cubilia</td>
+					<td>habitant morbi</td>
+					<td>id blandit</td>
+				</tr>
+				<tr>
+					<td>eget congue</td>
+					<td>ornare non felis</td>
+					<td>amet augue</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<h2>Citace</h2>
+			<p>
+				<cite>
+					<strong>Citace</strong>
+					Nam sem velit, condimentum in posuere eu, elementum in augue. Vestibulum pulvinar ligula eget ante placerat eget euismod velit laoreet. Donec quis quam lectus, quis viverra nulla. Donec aliquet, purus eget pharetra egestas, massa orci egestas arcu, ac dignissim felis nunc vitae est.
+				</cite>
+			</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo.</p>
+
+			<blockquote>
+				<p>
+					<strong>Bloková citace</strong>
+					Vivamus urna diam, placerat et ultricies interdum, tempus sed diam. Nam magna mi, pulvinar nec pellentesque eu, consequat it amet quam. Etiam posuere purus eu augue fermentum laoreet. Ut at risus sapien. Duis commodo dapibus arcu.
+				</p>
+			</blockquote>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel massa leo. Praesent tristique eros libero, quis vestibulum lorem. Aenean sapien enim, aliquam id ullamcorper et, malesuada vitae leo.</p>
+		</main><!-- /main -->
+	</div><!-- /container -->
+
+	{% include "../partial/footer.twig" %}
+	{% include "../partial/footer-scripts.twig" %}
+{% endblock %}

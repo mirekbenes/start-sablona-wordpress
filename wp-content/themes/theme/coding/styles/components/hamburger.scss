@@ -1,0 +1,103 @@
+/* ==========================================================================
+    HAMBURGER
+   ========================================================================== */
+:root {
+	--hamburgerTxtClr: blue;
+	--hamburgerTxtClrActive: red;
+	--hamburgerLinesBg: blue;
+	--hamburgerLinesBgActive: red;
+}
+
+$hamburgerTransition: all 0.15s cubic-bezier(.2,.57,.73,.95) 0s;
+
+.hamburger {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0 rem(10px);
+	height: rem(26px);
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	line-height: 1;
+
+	&:hover {
+		.hamburger__txt {
+			color: var(--hamburgerTxtClrActive);
+		}
+
+		.hamburger__lines {
+			span,
+			&:before,
+			&:after {
+				background-color: var(--hamburgerLinesBgActive);
+			}
+		}
+	}
+}
+
+.hamburger__lines {
+	position: relative;
+	width: rem(24px);
+	height: rem(18px);
+
+	span {
+		transition: $hamburgerTransition;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: rem(16px);
+		height: rem(2px);
+		background: var(--hamburgerLinesBg);
+	}
+
+	&:before,
+	&:after {
+		will-change: transform;
+		transition: $hamburgerTransition;
+		content: '';
+		position: absolute;
+		left: 0;
+		width: rem(24px);
+		height: rem(2px);
+		background: var(--hamburgerLinesBg);
+	}
+
+	&:before {
+		transform-origin: 0 0;
+		top: 0;
+	}
+
+	&:after {
+		top: rem(8px);
+	}
+}
+
+
+.hamburger__txt {
+	transition: $hamburgerTransition;
+	color: var(--hamburgerTxtClr);
+	font-weight: 700;
+	font-size: rem(14px);
+}
+
+.nav-open {
+	.hamburger__lines {
+		span {
+			width: 0;
+			opacity: 0;
+		}
+
+		&:before {
+			transform: rotate(45deg);
+			left: rem(4px);
+		}
+
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+

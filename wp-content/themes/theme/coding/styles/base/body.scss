@@ -1,0 +1,20 @@
+/* ==========================================================================
+    BODY
+   ========================================================================== */
+html {
+	overflow-x: hidden;
+}
+
+body {
+    @include GroteskRegular;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	min-height: 100svh;
+    background: var(--bodyBg);
+    color: var(--clrTxt);
+	line-height: 1.12;
+	font-size: rem(16px);
+	-webkit-font-smoothing: subpixel-antialiased;
+}

@@ -1,0 +1,251 @@
+/* ==========================================================================
+    TYPOGRAPHY
+   ========================================================================== */
+p {
+	margin: 0;
+	padding: rem(10px) 0;
+}
+
+strong {
+    @include GroteskBold;
+    font-weight: normal;
+}
+
+a {
+    @include transLinks;
+	color: var(--clrLinks);
+	text-decoration: none;
+
+	&:hover,
+	&:focus,
+	&:active {
+        color: var(--clrLinksActive);
+		text-decoration: underline;
+	}
+
+}
+
+a[href^="tel"],
+a[href^="sms"] {
+	text-decoration: none;
+	cursor: default;
+}
+
+h1 {
+	margin: 0;
+    line-height: 1.12;
+}
+
+h2 {
+	margin: 0;
+    line-height: 1.12;
+}
+
+h3 {
+	margin: 0;
+    line-height: 1.12;
+}
+
+h4,
+h5,
+h6 {
+	margin: 0;
+    line-height: 1.12;
+}
+
+ul {
+	margin: 0;
+	padding: rem(7px) 0;
+}
+
+ul li {
+	position: relative;
+	margin: 0;
+	padding: rem(4px) 0 rem(4px) rem(20px);
+    line-height: 1.12;
+	list-style: none;
+}
+
+ul li:before {
+	content: '';
+	position: absolute;
+	top: rem(11px);
+	left: 0;
+	width: rem(6px);
+	height: rem(6px);
+	background: var(--clrPrimary);
+	border-radius: rem(3px);
+}
+
+ul ul {
+	padding: rem(7px) 0 0 0;
+}
+
+ol {
+	margin: 0;
+	padding: rem(7px) 0;
+	counter-reset: section;
+}
+
+ol ul {
+	counter-reset: section;
+}
+
+ol li {
+	position: relative;
+	margin: 0;
+	padding: rem(4px) 0 rem(4px) rem(24px);
+    line-height: 1.12;
+	list-style: none;
+}
+
+ol li:before {
+	counter-increment: section;
+	content: counters(section,".") ".";
+   	position: absolute;
+	top: rem(3px);
+	left: 0;
+}
+
+ol ol li {
+	padding-left: rem(30px);
+}
+
+ol ul li {
+	padding-left: rem(20px);
+}
+
+ol ul li:before {
+	content: '';
+	top: rem(11px);
+	left: 0;
+}
+
+ol ol {
+	padding: rem(7px) 0 0 0;
+}
+
+dl {
+	margin: 0;
+	padding: rem(11px) 0 rem(6px) 0;
+    line-height: 1.12;
+}
+
+dt {
+	margin: 0;
+	padding: 0 0 rem(6px) 0;
+	font-weight: 700;
+}
+
+dd {
+	margin: 0;
+	padding: 0 0 rem(6px) 0;
+}
+
+table {
+	margin: rem(8px) 0;
+	text-align: left;
+	border: 1px solid var(--dividerBg);
+    line-height: 1.12;
+}
+
+table th,
+table thead td {
+	padding: rem(7px) rem(10px);
+	background: var(--tableHeadBg);
+    border: 1px solid var(--dividerBg);
+	font-weight: 700;
+	text-align: left;
+	vertical-align: middle;
+}
+
+
+table td {
+	padding: rem(7px) rem(10px);
+	border: 1px solid var(--dividerBg);
+	vertical-align: middle;
+}
+
+table p {
+	padding: 0;
+}
+
+table.width-100 {
+	width: 100%;
+}
+
+table.no-border {
+	border: 0;
+}
+
+table.no-border th,
+table.no-border td {
+	border: 0;
+	border-bottom: 1px solid var(--dividerBg);
+}
+
+cite {
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+	clear: both;
+	margin: rem(10px) 0;
+	padding: rem(10px) 0 rem(5px) rem(10px);
+	border-left: 2px solid var(--dividerBg);
+}
+
+blockquote {
+	position: relative;
+	margin: rem(10px) 0;
+	padding: rem(46px) rem(16px) rem(5px) rem(16px);
+	background: var(--tableHeadBg);
+}
+
+blockquote:after {
+	content: '“';
+	position: absolute;
+	top: rem(24px);
+	left: 50%;
+	width: rem(28px);
+	height: rem(19px);
+	margin-left: rem(-14px);
+	font-family: Georgia, serif;
+	font-size: rem(56px);
+	line-height: rem(38px);
+	font-weight: 700;
+	text-align: center;
+}
+
+hr {
+    height: 1px;
+    margin: rem(10px) 0;
+    background: var(--dividerBg);
+    border: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: rem(10px) 0;
+}
+
+img.left {
+	display: block;
+	margin: rem(15px) rem(30px) rem(10px) 0;
+
+	@include media-phone {
+        float: none;
+		margin: rem(15px) auto rem(10px) auto;
+    }
+}
+
+img.right {
+	display: block;
+	margin: rem(15px) 0 rem(10px) rem(30px);
+
+	@include media-phone {
+        float: none;
+		margin: rem(15px) auto rem(10px) auto;
+    }
+}

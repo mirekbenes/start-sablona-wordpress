@@ -1,0 +1,45 @@
+<header class="header">
+    <div class="header__section">
+        <div class="header__burger">
+            <button type="button" class="hamburger js-hamburger" aria-expanded="false">
+				<span class="hamburger__lines">
+					<span></span>
+				</span>
+                <span class="hamburger__txt">Menu</span>
+            </button>
+        </div><!-- /header__burger -->
+
+        <div class="header__logo">
+            <div class="sitelogo">
+                <a href="/">
+                    <img src="../assets/images/logo.svg" alt="BIG TIME" width="120" height="19">
+                </a>
+            </div>
+        </div><!-- /header__logo -->
+
+        <div class="header__nav">
+            <nav class="nav" aria-label="Primary">
+                <ul class="reset">
+                    <li{{ navActive == 'navAbout' ? ' class="is-active"' : '' }}>
+                        <a href="/about/">About</a>
+                    </li>
+                    <li{{ navActive == 'navWork' ? ' class="is-active"' : '' }}>
+                        <a href="/work/">Work</a>
+                    </li>
+                    <li{{ navActive == 'navCareers' ? ' class="is-active"' : '' }}>
+                        <a href="/careers/">Careers</a>
+                    </li>
+                    <li{{ navActive == 'navContact' ? ' class="is-active"' : '' }}>
+                        <a href="/contact/">Contact</a>
+                    </li>
+                </ul>
+            </nav><!-- /nav -->
+        </div><!-- /header__nav -->
+
+        <div class="header__tools">
+            <div class="langswitch">
+                <a href="/cs/">CS</a>
+            </div>
+        </div><!-- /header__tools -->
+    </div><!-- /header__section -->
+</header><!-- /header -->

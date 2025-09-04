@@ -1,0 +1,46 @@
+/* ==========================================================================
+    FONT FACE
+   ========================================================================== */
+@font-face {
+    font-family: 'GroteskLight';
+    src: url('../fonts/founders-grotesk-light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GroteskRegular';
+    src: url('../fonts/founders-grotesk-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GroteskMedium';
+    src: url('../fonts/founders-grotesk-medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GroteskBold';
+    src: url('../fonts/founders-grotesk-bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin GroteskLight {
+    font-family: 'GroteskLight', sans-serif;
+}
+
+@mixin GroteskRegular {
+    font-family: 'GroteskRegular', sans-serif;
+}
+
+@mixin GroteskMedium {
+    font-family: 'GroteskMedium', sans-serif;
+}
+
+@mixin GroteskBold {
+    font-family: 'GroteskBold', sans-serif;
+}
